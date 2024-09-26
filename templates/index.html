@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>高情商回复生成器</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>高情商回复生成器</h1>
+        <form method="POST">
+            <label for="user_input">请输入：</label><br>
+            <input type="text" id="user_input" name="user_input" required><br><br>
+            <button type="submit">生成回复</button>
+        </form>
+        {% if response %}
+            <div class="response">
+                <h2>AI回复：</h2>
+                <p>{{ response }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
